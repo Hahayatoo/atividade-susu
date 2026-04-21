@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOFTOP — Fine Dining Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+/* ============================================================
+   BASE (style.css)
+   ============================================================ */
+* { box-sizing: border-box; margin: 0; }
+
+header { text-align: center; background: #fff; position: fixed; top: 0; width: 100%; z-index: 999; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+
+header li {
+    display: inline-block;
+    width: 4%;
+    padding: 4px;
+    margin-right: 40px;
+    vertical-align: middle;
+}
+
+#logo { width: 11%; }
+#logo img { width: 66.84px; height: 79.38px; }
+
+#HOME { color: goldenrod; text-decoration: none; }
+li a { color: black; text-decoration: none; }
+li a:hover { color: goldenrod; transition: 0.4s ease; }
+
+/* Dropdown */
+.item-dropdown { position: relative; }
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    z-index: 1000;
+}
+.submenu li { display: block; width: auto; margin: 0; }
+.submenu li a { color: #333; padding: 10px 16px; text-decoration: none; display: block; font-size: 14px; }
+.item-dropdown:hover .submenu { display: block; }
+.submenu li a:hover { background-color: #f5f5f5; color: #b3a373; }
+
+/* ============================================================
+   HERO (index — style.css / sytle3.css)
+   ============================================================ */
+#sec-hero {
+    height: 100vh;
+    background-image: url('banner-bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    letter-spacing: 0.2em;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+#subtitulo {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    border-top: #FFFFFF solid 1px;
+    width: 26%;
+    margin: auto;
+    padding: 20px;
+    letter-spacing: 0.15em;
+    margin-top: -215px;
+    text-align: center;
+}
+
+#bookinthetable {
+    width: 92px;
+    height: 180px;
+    text-align: center;
+    top: 45%;
+    right: 0;
+    background-image: url('book-table.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#textobook {
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+}
+
+#view-menu-btn {
+    width: 92px;
+    height: 180px;
+    text-align: center;
+    top: 45%;
+    left: 0;
+    background-image: url('view menu.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#textoview {
+    display: inline-block;
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    transform: rotate(90deg);
+    white-space: nowrap;
+}
+
+#seta {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 49%;
+}
+
+/* ============================================================
+   MENU SECTION (index — style.css)
+   ============================================================ */
+.menu-maiorzao {
+    display: flex;
+    min-height: 80vh;
+    font-family: serif;
+    padding-top: 40px;
+}
+
+.menu-titulo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 50px;
+    background-color: #fff;
+    margin-top: 5%;
+}
+
+.menu-titulo h1 { line-height: 1.1; }
+
+.subtitulo-menu {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #777;
+    max-width: 450px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.butao-menu {
+    display: inline-block;
+    background: #b3a373;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.menu-cardapio {
+    flex: 1;
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.category {
+    font-style: italic;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.item-cabecalho {
+    display: flex;
+    font-weight: bold;
+}
+
+.dots {
+    flex: 1;
+    border-bottom: 2px dotted #000;
+    margin: 1px;
+}
+
+.descricao {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* ============================================================
+   GALLERY (style.css)
+   ============================================================ */
+.galeria-mural {
+    column-count: 2;
+    column-gap: 400px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.galeria-mural img {
+    width: 200%;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: -100%;
+}
+
+/* ============================================================
+   BOOKING FORM (style.css)
+   ============================================================ */
+.booking-wrapper {
+    padding: 60px 40px;
+    background: #fdfaf5;
+}
+
+.booking-dentro {
+    display: flex;
+    max-width: 1100px;
+    font-family: serif;
+    align-items: flex-start;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.booking-forma {
+    flex: 2;
+    background-color: #f9f5f0;
+    padding: 60px;
+}
+
+.booking-forma input,
+.booking-forma select,
+.booking-forma textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #eee;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.forma-row { display: flex; gap: 18px; }
+.forma-row > * { flex: 1; }
+.forma-guests { display: flex; gap: 18px; }
+.forma-guests > * { flex: 1; }
+
+.booking-forma button {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: right;
+}
+
+.booktexto { flex: 1; padding: 20px; }
+.booktexto h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+.booktexto p { color: #666; line-height: 1.6; }
+
+/* ============================================================
+   CHEF QUOTE (style.css / style2.css)
+   ============================================================ */
+.chefao1 { display: flex; align-items: center; padding: 40px; gap: 40px; }
+
+#chefao { width: 340px; height: auto; flex-shrink: 0; }
+
+#textochefao {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    max-width: 500px;
+}
+
+#textochefao h1 { margin-bottom: 20px; }
+#textochefao p { font-family: Arial, sans-serif; font-size: 14px; letter-spacing: 0.05em; line-height: 1.7; color: #444; }
+#textochefao img { margin-top: 20px; height: 40px; }
+
+#bife { width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   CONTACT INFO (style.css / stylecontact.css)
+   ============================================================ */
+#local {
+    padding: 50px;
+    font-size: 20px;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.local-info h1 { margin-bottom: 20px; }
+
+#sublocal {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.formulario-contato {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d1d9e1;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.formulario-contato input:focus,
+.formulario-contato textarea:focus { border-color: #b3a373; }
+
+.formulario-contato textarea { resize: vertical; min-height: 120px; }
+
+.container-botao { display: flex; justify-content: flex-end; margin-top: 10px; }
+
+.btn-enviar {
+    background-color: #b3a373;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-enviar:hover { background-color: #ffffff; color: #b3a373; }
+
+/* ============================================================
+   ABOUT (style2.css)
+   ============================================================ */
+.about-section { padding: 60px 40px; }
+.about-chefao { display: flex; align-items: center; gap: 60px; max-width: 1100px; margin: 0 auto; }
+.about-chefao img { width: 420px; height: auto; flex-shrink: 0; }
+.about-text h1 { font-size: 40px; line-height: 1.2; margin-bottom: 20px; font-family: serif; }
+.about-text p { color: #666; line-height: 1.7; font-size: 15px; }
+
+/* ============================================================
+   SECTION HEADERS (sub-pages)
+   ============================================================ */
+.sec-subpage {
+    height: 58vh;
+    background-image: url('banner-bg2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.sec-subpage #titulo { height: 60vh; font-size: 60px; }
+.sec-subpage #subtitulo { margin-top: -185px; font-size: 14px; }
+
+/* ============================================================
+   GALLERY PAGE (style6.css)
+   ============================================================ */
+.galeria-page {
+    max-width: 1100px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 40px;
+}
+.galeria-page img { width: 100%; height: 300px; object-fit: cover; display: block; }
+
+/* ============================================================
+   BLOG (styleblog.css)
+   ============================================================ */
+.blog-hero {
+    height: 78vh;
+    background-image: url('header-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.blog-hero #titulo { height: 70vh; }
+.blog-hero #subtitulo { margin-top: -215px; font-size: 14px; }
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    background-color: #f9f9ff;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.overlay {
+    background-color: rgba(0,0,0,0.7);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    transition: all 0.4s ease;
+    padding: 20px;
+}
+
+.overlay hr { width: 200px; border: 1px solid white; margin: 15px 0; }
+.overlay h3 { font-family: 'Cinzel', serif; letter-spacing: 2px; }
+.card:hover .overlay { background-color: rgba(179,163,115,0.9); }
+
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 40px;
+    padding: 0 15px;
+}
+
+.posts-section { flex: 2; }
+.sidebar { flex: 1; }
+
+.post-card { display: flex; margin-bottom: 60px; gap: 20px; }
+
+.post-meta {
+    flex: 0 0 180px;
+    text-align: right;
+    font-size: 14px;
+}
+.post-meta p { color: #222; margin-bottom: 15px; }
+.meta-icons span { display: block; color: #777; margin-bottom: 8px; font-size: 13px; }
+
+.post-content { flex: 1; }
+.post-content img { width: 100%; margin-bottom: 20px; }
+.post-content h2 { font-size: 24px; margin-bottom: 15px; color: #222; }
+.post-content p { color: #777; line-height: 1.6; margin-bottom: 20px; }
+
+.btn-view-more {
+    border: 1px solid #eee;
+    background: #fff;
+    color: #222;
+    padding: 10px 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.btn-view-more:hover { background: #b0976d; color: #fff; }
+
+.widget { margin-bottom: 40px; }
+.widget-title {
+    background-color: #b0976d;
+    color: white;
+    padding: 10px 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.newsletter-text { font-size: 14px; color: #777; margin: 20px 0; }
+.newsletter-form .input-group { display: flex; border: 1px solid #eee; }
+.newsletter-form input { border: none; padding: 10px; flex: 1; outline: none; }
+.btn-subscribe { background-color: #b0976d; color: white; border: none; padding: 0 15px; cursor: pointer; }
+
+.category-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dotted #eee;
+    color: #777;
+    list-style: none;
+}
+
+.tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.tag-item {
+    border: 1px solid #eee;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #222;
+    text-decoration: none;
+    background: #fff;
+}
+
+.search-box { display: flex; border: 1px solid #eee; margin-bottom: 30px; }
+.search-box input { border: none; padding: 10px; flex: 1; outline: none; }
+.search-box button { background: #b0976d; border: none; color: #fff; padding: 0 14px; cursor: pointer; }
+
+.author-profile { text-align: center; margin-bottom: 30px; border: 1px solid #eee; padding: 20px; }
+.author-profile img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 10px; display: block; }
+.author-profile h3 { font-size: 16px; margin-bottom: 4px; }
+.author-profile p { font-size: 13px; color: #777; }
+
+.popular-item { display: flex; gap: 12px; margin-bottom: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.popular-item img { width: 60px; height: 60px; object-fit: cover; flex-shrink: 0; }
+.popular-info h4 { font-size: 13px; color: #222; margin-bottom: 4px; }
+.popular-info p { font-size: 12px; color: #aaa; }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 50px 0;
+}
+.page-link { text-decoration: none; color: #777; font-size: 16px; padding: 10px 15px; transition: all 0.3s; }
+.page-link.active { background-color: #b0976d; color: white; font-weight: bold; min-width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.page-link:hover:not(.active) { color: #b0976d; }
+
+/* ============================================================
+   FOOTER (todos os arquivos)
+   ============================================================ */
+.rodape {
+    background-color: #04091e;
+    color: #777;
+    padding: 60px 10%;
+    font-family: sans-serif;
+}
+.colunas-container { display: flex; gap: 20px; }
+.coluna { flex: 1; min-width: 150px; margin-bottom: 30px; }
+.coluna h3 { color: #fff; font-size: 16px; margin-bottom: 25px; letter-spacing: 1px; }
+.coluna ul { list-style: none; padding: 0; }
+.coluna ul li { margin-bottom: 12px; font-size: 14px; color: #777; transition: 0.3s; cursor: default; }
+.coluna ul li:hover { color: #bfa371; }
+
+.input-grupo { display: flex; margin-top: 10px; }
+.input-grupo input { background: transparent; border: 1px solid #333; padding: 10px; color: #fff; flex: 1; }
+.input-grupo button { background-color: #bfa371; border: none; padding: 10px 15px; color: #fff; cursor: pointer; }
+
+.rodape-inferior {
+    border-top: 1px solid #333;
+    margin-top: 50px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+/* ============================================================
+   SECTION DIVIDERS
+   ============================================================ */
+.section-anchor { padding-top: 90px; } /* compensate fixed nav */
+.section-label {
+    text-align: center;
+    padding: 30px 0 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #b3a373;
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+}
+    </style>
+</head>
+
+<!-- ═══════════════════════════════════════════
+     HEADER / NAV
+═══════════════════════════════════════════ -->
+<header>
+<ul>
+    <li><a id="HOME" href="#home">HOME</a></li>
+    <li><a href="#menu">MENU</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li id="logo"><a href="#home"><img src="logo.png" alt="Rooftop"></a></li>
+    <li class="item-dropdown">
+        <a href="#">PAGES▼</a>
+        <ul class="submenu">
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#elements">Elements</a></li>
+        </ul>
+    </li>
+    <li class="item-dropdown">
+        <a href="#">BLOG▼</a>
+        <ul class="submenu">
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </li>
+    <li><a href="#gallery">GALLERY</a></li>
+</ul>
+</header>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HOME — HERO
+═══════════════════════════════════════════ -->
+<section id="home" id-sec-hero style="position:relative;">
+    <div id="sec-hero">
+        <a id="titulo">ROOFTOP</a>
+        <p id="subtitulo">A Fine Dinning Restaurant</p>
+
+        <div id="bookinthetable">
+            <a href="#book" id="textobook">BOOK A TABLE</a>
+        </div>
+        <div id="view-menu-btn">
+            <a href="#menu" id="textoview">VIEW MENU</a>
+        </div>
+
+        <img id="seta" src="go-down.png">
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MENU (index.html + menu.html)
+═══════════════════════════════════════════ -->
+<div id="menu" class="section-anchor"></div>
+<p class="section-label">FOOD MENU &nbsp;·&nbsp; HOME → MENU</p>
+
+<section class="menu-maiorzao">
+    <div class="menu-titulo">
+        <h1>DAILY FOOD <br> COURSES <br> WITH DRINKS</h1>
+        <p class="subtitulo-menu">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <a href="#" class="butao-menu">SEE FULL MENU</a>
+    </div>
+
+    <div class="menu-cardapio">
+        <h2 class="category">APPETIZER</h2>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+
+        <h2 class="category">MAIN COURSES</h2>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+
+        <h2 class="category">DRINKS &amp; JUICES</h2>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+        <div class="menu-item">
+            <div class="item-cabecalho">
+                <span>Ham &amp; Potato Sandwiches</span>
+                <span class="dots"></span>
+                <span class="preco">$25.00</span>
+            </div>
+            <p class="descricao">(French bread baguette, cooked ham, potato salad)</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     GALLERY (index inline + gallery.html)
+═══════════════════════════════════════════ -->
+<div id="gallery" class="section-anchor"></div>
+<p class="section-label">IMAGE GALLERY &nbsp;·&nbsp; HOME → GALLERY</p>
+
+<div class="galeria-page">
+    <img src="g1.jpg" alt="Sushi">
+    <img src="g3.jpg" alt="Macaron">
+    <img src="g2.jpg" alt="Massa">
+    <img src="g4.jpg" alt="Peixe">
+</div>
+
+<!-- ═══════════════════════════════════════════
+     BOOK A TABLE (index.html booking form)
+═══════════════════════════════════════════ -->
+<div id="book" class="section-anchor"></div>
+<p class="section-label">RESERVATIONS &nbsp;·&nbsp; HOME → BOOK A TABLE</p>
+
+<div class="booking-wrapper">
+    <div class="booking-dentro">
+        <div class="booking-forma">
+            <form>
+                <input type="text" placeholder="Event Name">
+                <div class="forma-row">
+                    <input type="date">
+                    <select>
+                        <option disabled selected>Event Time</option>
+                        <option>05:00</option>
+                        <option>08:00</option>
+                        <option>09:00</option>
+                    </select>
+                </div>
+                <div class="forma-guests">
+                    <select>
+                        <option disabled selected>Number of guests</option>
+                        <option>Number of guests 1</option>
+                        <option>Number of guests 2</option>
+                        <option>Number of guests 3</option>
+                    </select>
+                    <input type="text" placeholder="Budget">
+                </div>
+                <input type="text" placeholder="Contact Name">
+                <input type="email" placeholder="Email Address">
+                <input type="tel" placeholder="Phone Number">
+                <textarea placeholder="Post a message" rows="5"></textarea>
+                <button type="button">SEND REQUEST</button>
+            </form>
+        </div>
+        <div class="booktexto">
+            <h1>BOOK A TABLE OR ROOMS FOR PRIVATE DINING</h1>
+            <p>Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CHEF QUOTE (index.html + menu.html)
+═══════════════════════════════════════════ -->
+<div class="chefao1">
+    <img src="chefao.jpg" id="chefao" alt="Chef">
+    <div id="textochefao">
+        <h1>Chef's Quotes</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Quotes</p>
+        <img src="signature.png" alt="Signature">
+    </div>
+</div>
+<img src="callaction-bg1.png" id="bife" alt="">
+
+<!-- ═══════════════════════════════════════════
+     ABOUT (about.html)
+═══════════════════════════════════════════ -->
+<div id="about" class="section-anchor"></div>
+<p class="section-label">ABOUT US &nbsp;·&nbsp; HOME → ABOUT</p>
+
+<div class="about-section">
+    <div class="about-chefao">
+        <img src="g2.jpg" alt="About Rooftop">
+        <div class="about-text">
+            <h1>About<br>Rooftop<br>Dinning</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+</div>
+
+<img src="callaction-bg1.png" id="bife" alt="" style="margin-top:40px;">
+
+<!-- ═══════════════════════════════════════════
+     BLOG (Blog.html)
+═══════════════════════════════════════════ -->
+<div id="blog" class="section-anchor"></div>
+<p class="section-label">ROOFTOP &nbsp;·&nbsp; A Fine Dinning Restaurant</p>
+
+<div class="container-cards">
+    <div class="card" style="background-image: url('cat-widget1.jpg');">
+        <div class="overlay">
+            <h3>SOCIAL LIFE</h3>
+            <hr>
+            <p>Enjoy your social life together</p>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('cat-widget2.jpg');">
+        <div class="overlay">
+            <h3>POLITICS</h3>
+            <hr>
+            <p>Be a part of politics</p>
+        </div>
+    </div>
+    <div class="card" style="background-image: url('cat-widget3.jpg');">
+        <div class="overlay">
+            <h3>FOOD</h3>
+            <hr>
+            <p>Let the food be finished</p>
+        </div>
+    </div>
+</div>
+
+<!-- Post 1 -->
+<div class="main-container">
+    <section class="posts-section">
+        <article class="post-card">
+            <div class="post-meta">
+                <p>Food, Technology, Politics, Lifestyle</p>
+                <div class="meta-icons">
+                    <span>Mark Wiens</span>
+                    <span>12 Dec, 2017</span>
+                    <span>1.2M Views</span>
+                    <span>06 Comments</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="muiecavalo.jpg" alt="Astronomy Binoculars">
+                <h2>Astronomy Binoculars A Great Alternative</h2>
+                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                <a href="#" class="btn-view-more">View More</a>
+            </div>
+        </article>
+    </section>
+
+    <aside class="sidebar">
+        <div class="search-box">
+            <input type="text" placeholder="Search Posts">
+            <button>🔍</button>
+        </div>
+        <div class="author-profile">
+            <img src="loki.jpg" alt="Charlie Barber">
+            <h3>Charlie Barber</h3>
+            <p>Senior blog writer</p>
+            <p class="author-bio" style="margin-top:8px;">Boot camps have its supporters and its detractors...</p>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title">Post Categories</h3>
+            <ul class="category-list">
+                <li><span>Technology</span> <span>37</span></li>
+                <li><span>Lifestyle</span> <span>24</span></li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title">Tag Clouds</h3>
+            <div class="tag-container">
+                <a href="#" class="tag-item">Technology</a>
+                <a href="#" class="tag-item">Fashion</a>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- Post 2 -->
+<div class="main-container">
+    <section class="posts-section">
+        <article class="post-card">
+            <div class="post-meta">
+                <p>Food, Technology, Politics, Lifestyle</p>
+                <div class="meta-icons">
+                    <span>Mark Wiens</span>
+                    <span>12 Dec, 2017</span>
+                    <span>1.2M Views</span>
+                    <span>06 Comments</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="floresta.jpg" alt="Telescope">
+                <h2>The Basics Of Buying A Telescope</h2>
+                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                <a href="#" class="btn-view-more">View More</a>
+            </div>
+        </article>
+    </section>
+
+    <div class="widget popular-posts" style="flex:1;padding:20px 0;">
+        <h3 class="widget-title">Popular Posts</h3>
+        <div class="popular-item">
+            <img src="fone.jpg" alt="Space">
+            <div class="popular-info"><h4>Space The Final Frontier</h4><p>02 Hours ago</p></div>
+        </div>
+        <div class="popular-item">
+            <img src="mijo.jpg" alt="Hubble">
+            <div class="popular-info"><h4>The Amazing Hubble</h4><p>02 Hours ago</p></div>
+        </div>
+        <div class="popular-item">
+            <img src="pirulito.jpg" alt="Astronomy">
+            <div class="popular-info"><h4>Astronomy Or Astrology</h4><p>02 Hours ago</p></div>
+        </div>
+        <div class="popular-item">
+            <img src="oculos.jpg" alt="Asteroids">
+            <div class="popular-info"><h4>Asteroids telescope</h4><p>02 Hours ago</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- Post 3 -->
+<div class="main-container">
+    <section class="posts-section">
+        <article class="post-card">
+            <div class="post-meta">
+                <p>Food, Technology, Politics, Lifestyle</p>
+                <div class="meta-icons">
+                    <span>Mark Wiens</span>
+                    <span>12 Dec, 2017</span>
+                    <span>1.2M Views</span>
+                    <span>06 Comments</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="casal.jpg" alt="Glossary">
+                <h2>The Glossary Of Telescopes</h2>
+                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                <a href="#" class="btn-view-more">View More</a>
+            </div>
+        </article>
+    </section>
+    <div style="flex:1;padding:20px;">
+        <img src="ads.jpg" alt="ads" style="width:100%;">
+    </div>
+</div>
+
+<!-- Posts 4 & 5 + sidebar -->
+<div class="main-container">
+    <section class="posts-section">
+        <article class="post-card">
+            <div class="post-meta">
+                <p>Food, Technology, Politics, Lifestyle</p>
+                <div class="meta-icons">
+                    <span>Mark Wiens</span>
+                    <span>12 Dec, 2017</span>
+                    <span>1.2M Views</span>
+                    <span>06 Comments</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="mujer.jpg" alt="Night Sky">
+                <h2>The Night Sky</h2>
+                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                <a href="#" class="btn-view-more">View More</a>
+            </div>
+        </article>
+        <article class="post-card">
+            <div class="post-meta">
+                <p>Food, Technology, Politics, Lifestyle</p>
+                <div class="meta-icons">
+                    <span>Mark Wiens</span>
+                    <span>12 Dec, 2017</span>
+                    <span>1.2M Views</span>
+                    <span>06 Comments</span>
+                </div>
+            </div>
+            <div class="post-content">
+                <img src="telecosdp.jpg" alt="Telescopes 101">
+                <h2>Telescopes 101</h2>
+                <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.</p>
+                <a href="#" class="btn-view-more">View More</a>
+            </div>
+        </article>
+
+        <nav class="pagination">
+            <a href="#" class="page-link">&lt;</a>
+            <a href="#" class="page-link">01</a>
+            <a href="#" class="page-link active">02</a>
+            <a href="#" class="page-link">03</a>
+            <a href="#" class="page-link">04</a>
+            <a href="#" class="page-link">09</a>
+            <a href="#" class="page-link">&gt;</a>
+        </nav>
+    </section>
+
+    <aside class="sidebar">
+        <div class="widget">
+            <h3 class="widget-title">Post Categories</h3>
+            <ul class="category-list">
+                <li><span>Technology</span> <span>37</span></li>
+                <li><span>Lifestyle</span> <span>24</span></li>
+                <li><span>Fashion</span> <span>59</span></li>
+                <li><span>Art</span> <span>29</span></li>
+                <li><span>Food</span> <span>15</span></li>
+                <li><span>Architecture</span> <span>09</span></li>
+                <li><span>Adventure</span> <span>44</span></li>
+            </ul>
+        </div>
+        <div class="widget" style="text-align:center;">
+            <h3 class="widget-title">Newsletter</h3>
+            <p class="newsletter-text">Here, I focus on a range of items and features that we use in life without giving them a second thought.</p>
+            <div class="newsletter-form">
+                <div class="input-group">
+                    <span style="padding:10px;">✉</span>
+                    <input type="email" placeholder="Enter email">
+                    <button class="btn-subscribe">Subscribe</button>
+                </div>
+            </div>
+            <p style="font-size:12px;color:#aaa;margin-top:8px;">You can unsubscribe at any time</p>
+        </div>
+        <div class="widget">
+            <h3 class="widget-title">Tag Clouds</h3>
+            <div class="tag-container">
+                <a href="#" class="tag-item">Technology</a>
+                <a href="#" class="tag-item">Fashion</a>
+                <a href="#" class="tag-item">Architecture</a>
+                <a href="#" class="tag-item">Food</a>
+                <a href="#" class="tag-item">Lifestyle</a>
+                <a href="#" class="tag-item">Art</a>
+                <a href="#" class="tag-item">Adventure</a>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT (contact.html)
+═══════════════════════════════════════════ -->
+<div id="contact" class="section-anchor"></div>
+<p class="section-label">CONTACT US &nbsp;·&nbsp; HOME → CONTACT</p>
+
+<div id="local" style="flex-wrap:wrap;">
+    <div class="local-info">
+        <h1>Rooftop Fine Dinning Restaurant</h1>
+        <div id="sublocal">432 Wyandotte Ave, Lakewood, OH, 44107</div>
+        <div id="sublocal">432 Wyandotte Ave, Lakewood, OH, 44107</div>
+        <div id="sublocal">012 44 (216) 785-9346</div>
+        <div id="sublocal">012 44 (216) 785-9346</div>
+        <div id="sublocal">012 44 (216) 785-9346</div>
+        <div id="sublocal">info@rooftoprestaurant.co.uk</div>
+        <div id="sublocal">support@rooftoprestaurant.com</div>
+    </div>
+
+    <div class="formulario-contato">
+        <input type="text" placeholder="Contact Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <textarea placeholder="Post a message" rows="5"></textarea>
+        <div class="container-botao">
+            <button class="btn-enviar">SEND MESSAGE</button>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="rodape">
+    <div class="colunas-container">
+        <div class="coluna">
+            <h3>TOP PRODUCTS</h3>
+            <ul>
+                <li>Managed Website</li>
+                <li>Manage Reputation</li>
+                <li>Power Tools</li>
+                <li>Marketing Service</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h3>Quick links</h3>
+            <ul>
+                <li>Jobs</li>
+                <li>Brand Assets</li>
+                <li>Investor Relations</li>
+                <li>Terms of Service</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h3>Features</h3>
+            <ul>
+                <li>Jobs</li>
+                <li>Brand Assets</li>
+                <li>Investor Relations</li>
+                <li>Terms of Service</li>
+            </ul>
+        </div>
+        <div class="coluna">
+            <h3>Resources</h3>
+            <ul>
+                <li>Guides</li>
+                <li>Research</li>
+                <li>Experts</li>
+                <li>Agencies</li>
+            </ul>
+        </div>
+        <div class="coluna newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>Stay update with our latest</p>
+            <div class="input-grupo">
+                <input type="email" placeholder="Enter Email Address">
+                <button>→</button>
+            </div>
+        </div>
+    </div>
+    <div class="rodape-inferior">
+        <p>Copyright © 2026 All rights reserved | This template is made with ♡ by Colorlib</p>
+    </div>
+</footer>
+
+</body>
+</html>
